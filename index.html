@@ -250,6 +250,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liang34.github.io/Liang34/Liang34/2020/03/19/chap2Test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiangJH">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Liang34/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liang34">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Liang34/2020/03/19/chap2Test/" itemprop="url">数据结构与算法JavaScript描述[第二章](数组)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T22:01:55+08:00">
+                2020-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Liang34/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95JavaScript%E6%8F%8F%E8%BF%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法JavaScript描述</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1．创建一个记录学生成绩的对象，提供一个添加成绩的方法，以及一个显示学生平均成绩的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, grade)&#123;<span class="comment">// constructor是一个构造方法，用来接收参数</span></span><br><span class="line">        <span class="keyword">this</span>.name = name <span class="comment">// this代表的是实例对象</span></span><br><span class="line">        <span class="keyword">this</span>.grade=grade</span><br><span class="line">    &#125;</span><br><span class="line">    addGrade(grade) &#123; <span class="comment">//添加成绩</span></span><br><span class="line">        <span class="keyword">this</span>.grade.push(grade)</span><br><span class="line">    &#125;</span><br><span class="line">    showAverageGrade() &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = <span class="keyword">this</span>.grade.reduce(<span class="function">(<span class="params">p, v</span>) =&gt;</span> p + v)</span><br><span class="line">        <span class="keyword">let</span> averAge = temp/<span class="keyword">this</span>.grade.length</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">"平均成绩为："</span>+averAge)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> stu1 = <span class="keyword">new</span> Student(<span class="string">"lisi"</span>, [<span class="number">92</span>, <span class="number">80</span> ,<span class="number">95</span>])</span><br><span class="line">stu1.addGrade(<span class="number">100</span>)</span><br><span class="line">stu1.showAverageGrade() <span class="comment">// lisi平均成绩为：91.75</span></span><br><span class="line"><span class="keyword">let</span> stu2 = <span class="keyword">new</span> Student(<span class="string">"zhangsan"</span>, [<span class="number">54</span>, <span class="number">86</span> ,<span class="number">20</span>])</span><br><span class="line">stu2.addGrade(<span class="number">100</span>)</span><br><span class="line">stu2.showAverageGrade()  <span class="comment">// zhangsan平均成绩为：65</span></span><br></pre></td></tr></table></figure>
+<p>2．将一组单词存储在一个数组中，并按正序和倒序分别显示这些单词。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="string">"Saber"</span>, <span class="string">"Archer"</span>, <span class="string">"Sakula"</span>, <span class="string">"Fate"</span>, <span class="string">"Caster"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"正序为："</span>+arr1.sort())</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"倒序为："</span>+arr1.reverse())</span><br><span class="line"> <span class="comment">// 或者</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b &gt; a</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"倒序为："</span>+arr1.sort(compare))</span><br></pre></td></tr></table></figure>
+<p>3．修改本章前面出现过的weeklyTemps对象，使它可以使用一个二维数组来存储每月的有用数据。增加一些方法用以显示月平均数、具体某一周平均数和所有周的平均数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//气温</span></span><br><span class="line"><span class="keyword">let</span> Temp = &#123;</span><br><span class="line">    <span class="comment">//温度存储</span></span><br><span class="line">    monthTempStore:[],</span><br><span class="line">    <span class="comment">//周温度存储</span></span><br><span class="line">    weekTempStore:[],</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span> (<span class="params">by,key,temp</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> strategy = &#123;</span><br><span class="line">            month:<span class="function"><span class="keyword">function</span> (<span class="params">month</span>) </span>&#123;</span><br><span class="line">                Temp.monthTempStore[month] = Temp.monthTempStore[month] || <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">                Temp.monthTempStore[month].push(temp);</span><br><span class="line">            &#125;,</span><br><span class="line">            week:<span class="function"><span class="keyword">function</span> (<span class="params">week</span>) </span>&#123;</span><br><span class="line">                Temp.weekTempStore[week] = Temp.weekTempStore[week] || <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">                Temp.weekTempStore[week].push(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        strategy[by](key);</span><br><span class="line">    &#125;,</span><br><span class="line">    average:<span class="function"><span class="keyword">function</span> (<span class="params">by,key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> strategy = &#123;</span><br><span class="line">            month:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">for</span>(;i &lt; Temp.monthTempStore[key].length; i++)&#123;</span><br><span class="line">                    sum += Temp.monthTempStore[key][i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> sum / i;</span><br><span class="line">            &#125;,</span><br><span class="line">            week:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">for</span>(;i &lt; Temp.weekTempStore[key].length; i++)&#123;</span><br><span class="line">                    sum += Temp.weekTempStore[key][i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> sum / i;</span><br><span class="line">            &#125;,</span><br><span class="line">            allWeek:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> index = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(;i &lt; Temp.weekTempStore.length; i++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(Temp.weekTempStore[i])&#123;</span><br><span class="line">                        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span> ; j &lt; Temp.weekTempStore[i].length; j++)&#123;</span><br><span class="line">                            sum += Temp.weekTempStore[i][j];</span><br><span class="line">                            ++index;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> sum / index;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> strategy[by]();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//   存储每个月有用数据</span></span><br><span class="line">Temp.add(<span class="string">'month'</span>,<span class="number">1</span>,<span class="number">20</span>);</span><br><span class="line">Temp.add(<span class="string">'month'</span>,<span class="number">1</span>,<span class="number">30</span>);</span><br><span class="line">Temp.add(<span class="string">'month'</span>,<span class="number">1</span>,<span class="number">30</span>);</span><br><span class="line"><span class="comment">//1月份平均温度 =&gt; 月平均数</span></span><br><span class="line"><span class="built_in">console</span>.log(Temp.average(<span class="string">'month'</span>,<span class="number">1</span>));</span><br><span class="line">Temp.add(<span class="string">'week'</span>,<span class="number">1</span>,<span class="number">30</span>);</span><br><span class="line">Temp.add(<span class="string">'week'</span>,<span class="number">1</span>,<span class="number">40</span>);</span><br><span class="line">Temp.add(<span class="string">'week'</span>,<span class="number">2</span>,<span class="number">40</span>);</span><br><span class="line"><span class="comment">//第1周温度平均数 =&gt; 某一周平均数</span></span><br><span class="line"><span class="built_in">console</span>.log(Temp.average(<span class="string">'week'</span>,<span class="number">1</span>));</span><br><span class="line"><span class="comment">//所有周平均数</span></span><br><span class="line"><span class="built_in">console</span>.log(Temp.average(<span class="string">'allWeek'</span>));</span><br></pre></td></tr></table></figure>
+<p>4．创建这样一个对象，它将字母存储在一个数组中，并且用一个方法可以将字母连在一起，显示成一个单词。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    alphabet:[<span class="string">"s"</span>, <span class="string">"a"</span>, <span class="string">"k"</span>,<span class="string">"u"</span>, <span class="string">"l"</span>, <span class="string">"a"</span>],</span><br><span class="line">    joinAlpha: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.alphabet.join(<span class="string">""</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.joinAlpha())</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liang34.github.io/Liang34/Liang34/2020/03/19/ArrayTraverse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1239,7 +1387,7 @@
               
                 <a href="/Liang34/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1250,12 +1398,21 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
