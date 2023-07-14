@@ -25,6 +25,6 @@ Here are some ideas to get you started:
 <H2>ID Card</H2>
 <p>Hi, I'm Liang34, a developer from Guangzhou, China with more than 3 years of experience.For the past year, I've mostly been responsible for front-end development, but I have a strong interest in back-end.</p>
 <p></p>
-<a href="https://github.com/anuraghazra/convoychat">
+<a>
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=Liang34&layout=compact&langs_count=8&card_width=320" />
 </a>
